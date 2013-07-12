@@ -2,11 +2,9 @@
 
   <% if current_user %>
     <ul>
-      <% @users.each do |user| %>
-        <li><%= user.name %></li>
-      <% end %>
-    </ul>
+      <h3>Create a Game</h3>
+      <h3>Join a Game</h3>
   <% else %>
-    <h2>Welcome, you are not signed in. Please sign In</h2>
+    <h2>Welcome to Tic Tac Toe. Please create an account or Sign</h2>
   <% end %>
 </div>
