@@ -2,8 +2,13 @@
 
   <% if current_user %>
     <ul>
-      <h3>Create a Game</h3>
-      <h3>Join a Game</h3>
+      <a href="/game">Create a Game</a>
+        <h3>Join a Game</h3>
+        <ul>
+      <% @game.each do |game| %>
+         <li><a href="/game/<%= game.id %>">Join a game</a></li>
+      <% end %>
+    </ul>
   <% else %>
     <h2>Welcome to Tic Tac Toe. Please create an account or Sign</h2>
   <% end %>

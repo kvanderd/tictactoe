@@ -1,5 +1,5 @@
 get '/' do
- @users = User.all
+ @game = Game.all
   erb :index
 end
 
@@ -47,4 +47,18 @@ end
 
 get "/test" do
 erb :board
+end
+
+
+get "/game" do 
+  new_game = Game.create
+  user = current_user
+  new_game.player1_id = user.id
+  new_game.save!
+  redirect "/game/#{new_game.id}"
+end
+
+
+get "/game/:id" do 
+ erb :board
 end
