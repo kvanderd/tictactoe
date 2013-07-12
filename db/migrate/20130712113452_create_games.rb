@@ -4,6 +4,7 @@ class CreateGames < ActiveRecord::Migration
       t.references :player1
       t.references :player2
       t.references :winner
+      t.string :last_move
     end
   end
 end
