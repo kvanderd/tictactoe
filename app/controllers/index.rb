@@ -43,3 +43,8 @@ post '/users' do
     erb :sign_up
   end
 end
+
+
+get "/test" do
+erb :board
+end
