@@ -1,4 +1,7 @@
 $(document).ready(function () {
+  var symbol = getPlayerSymbol()
+
+  $('td').on("click", conductMoveCycle)
 
   // send an HTTP DELETE request for the sign-out link
   $('a#sign-out').on("click", function (e) {
@@ -8,3 +11,37 @@ $(document).ready(function () {
   });
 
 });
+
+function getPlayerSymbol(){
+  // Send session[:user_id] to the server
+  // TODO: Establish route that returns symbol based on integer input.
+  // Return symbol as string.
+}
+function conductMoveCycle(){
+  showMove();
+  checkForWinner();
+  sendMove();
+  setIdle();
+  listenForResponse();
+}
+
+function showMove(){
+  // Set clicked <td> to symbol.
+}
+function sendMove(){
+  // Put together a string including the coordiantes of the move, and the symbol associated with it.
+  // Post that string using AJAX.
+  // TODO: Implement the setting of game.last_move in the controller.
+
+}
+function setIdle(){
+  // Unbind all click events on page.
+  // Append a message saying to wait for the other player to move.
+
+}
+
+function listenForResponse(){
+  // setInterval(1000, getResponse)
+  // getResponse posts to /game/:id/state, receives back a string.
+  // If response is a new move, rebinds conductMoveCycle to <td> click.
+}

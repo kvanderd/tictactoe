@@ -44,13 +44,14 @@ post '/users' do
   end
 end
 
+#----------- GAMES -----------
 
 get "/test" do
 erb :board
 end
 
 
-get "/game" do 
+get "/game" do
   new_game = Game.create
   user = current_user
   new_game.player1_id = user.id
@@ -59,6 +60,6 @@ get "/game" do
 end
 
 
-get "/game/:id" do 
+get "/game/:id" do
  erb :board
 end
