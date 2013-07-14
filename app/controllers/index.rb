@@ -58,8 +58,16 @@ get "/game" do
   new_game.save!
   redirect "/game/#{new_game.id}"
 end
-
+get "/game/:id/symbol" do |id|
+  game = Game.find(id)
+  puts session[:user]
+  puts game.player1_id
+  return session[:user] == game.player1_id ? "X" : "O"
+end
 
 get "/game/:id" do
  erb :board
 end
+
+
+

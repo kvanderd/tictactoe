@@ -1,5 +1,6 @@
+var symbol
 $(document).ready(function () {
-  var symbol = getPlayerSymbol()
+  getPlayerSymbol()
 
   $('td').on("click", conductMoveCycle)
 
@@ -13,7 +14,14 @@ $(document).ready(function () {
 });
 
 function getPlayerSymbol(){
-  // Send session[:user_id] to the server
+  url = window.location.pathname+'/symbol';
+  console.log(url)
+  var request = $.ajax({
+    url: url,
+    method: "GET"
+  });
+  request.done(function(response){debugger; symbol = response; console.log(symbol)});
+
   // TODO: Establish route that returns symbol based on integer input.
   // Return symbol as string.
 }
