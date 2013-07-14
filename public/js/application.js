@@ -20,10 +20,7 @@ function getPlayerSymbol(){
     url: url,
     method: "GET"
   });
-  request.done(function(response){debugger; symbol = response; console.log(symbol)});
-
-  // TODO: Establish route that returns symbol based on integer input.
-  // Return symbol as string.
+  request.done(function(response){symbol = response});
 }
 function conductMoveCycle(){
   showMove();
