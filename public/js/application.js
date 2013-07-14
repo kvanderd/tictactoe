@@ -2,7 +2,7 @@ var symbol
 $(document).ready(function () {
   getPlayerSymbol()
 
-  $('td').on("click", conductMoveCycle)
+  $('td').on("click", function(){$(this).text(symbol)})
 
   // send an HTTP DELETE request for the sign-out link
   $('a#sign-out').on("click", function (e) {
